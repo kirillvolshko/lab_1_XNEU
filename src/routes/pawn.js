@@ -31,7 +31,7 @@ const router = express.Router();
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Pawn'
+ *                 $ref: '#/components/schemas/PawnResponse'
  */
 router.get("/", getPawns);
 
@@ -54,7 +54,7 @@ router.get("/", getPawns);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Pawn'
+ *               $ref: '#/components/schemas/PawnResponse'
  */
 router.post("/", createPawn);
 
@@ -78,7 +78,7 @@ router.post("/", createPawn);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Pawn'
+ *               $ref: '#/components/schemas/PawnResponse'
  *       404:
  *         description: Позику не знайдено
  */

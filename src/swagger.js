@@ -157,6 +157,56 @@ const swaggerSpec = swaggerJSDoc({
             },
           },
         },
+        PawnResponse: {
+          type: "object",
+          properties: {
+            _id: {
+              type: "string",
+              description: "Унікальний ідентифікатор запису",
+              example: "60d21b4667d0d8992e610c86",
+            },
+            client: {
+              $ref: "#/components/schemas/Client",
+            },
+            item: {
+              $ref: "#/components/schemas/Item",
+            },
+            description: {
+              type: "string",
+              description: "Опис товару",
+              minLength: 3,
+              maxLength: 1000,
+              example:
+                "Телефон Samsung Galaxy, працює без проблем, має деякі подряпини на корпусі",
+            },
+            pawnDate: {
+              type: "string",
+              format: "date",
+              description: "Дата здачі товару в ломбард",
+              example: "2025-03-22",
+            },
+            returnDate: {
+              type: "string",
+              format: "date",
+              description: "Дата повернення товару",
+              example: "2025-06-22",
+            },
+            amount: {
+              type: "number",
+              description: "Сума позики",
+              example: 5000,
+              minimum: 1,
+              maximum: 500000,
+            },
+            commission: {
+              type: "number",
+              description: "Комісія ломбарду",
+              example: 500,
+              minimum: 1,
+              maximum: 500000,
+            },
+          },
+        },
       },
     },
   },
